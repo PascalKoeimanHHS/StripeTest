@@ -1,0 +1,22 @@
+<%= form_with model: @webinar do |form| %>
+    <%= render "shared/formerror", form: form %>
+
+    <div class="mb-3">
+        <%= form.label :title %><br>
+        <%= form.text_field :title, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :body %><br>
+        <%= form.text_area :body, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :price %><br>
+        <%= form.text_field :price, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :startdate %><br>
+        <%= form.datetime_select :startdate, class: "form-control" %>
+    </div>
+
+    <%= form.button "Submit", class: "btn btn-primary"%>
+<% end %>

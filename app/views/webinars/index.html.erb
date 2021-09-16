@@ -1,0 +1,24 @@
+<div class="text-center">
+    <h1>Available webinars</h1>
+    <p>Sign up for one of many available webinars and be notified when it goes live.</p>
+</div>
+<% @webinars.each do |el| %>
+    <div class="card">
+        <div class="card-header container-fluid">
+            <div class="row">
+                <div class="col-md-11">
+                    <%= el.title %>
+                </div>
+                <div class="col-md-1 float-right">
+                    👤 <%= el.subscribers %>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <%= link_to "View", el, class: "btn btn-primary" %>
+        </div>
+    </div>
+    <br>
+<% end %>
+
+<%= link_to "Create webinar", new_webinar_path, class: "btn btn-primary" %>

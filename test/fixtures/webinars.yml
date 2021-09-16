@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subscribers: 1
+  startdate: 2021-09-15
+
+two:
+  title: MyString
+  subscribers: 1
+  startdate: 2021-09-15

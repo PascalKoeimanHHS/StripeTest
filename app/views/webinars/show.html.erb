@@ -1,0 +1,37 @@
+<div class="text-center">
+    <h1><%= @webinar.title %></h1>
+    <p>This webinar has <%= @webinar.subscribers %> subscriber(s). Sign up now!</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Webinar details
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <strong> Date </strong>
+            <p><%= @webinar.startdate %></p>
+        </li>
+        <li class="list-group-item">
+            <strong> Price </strong>
+            <p><%= "$%0.2f" % [@webinar.price] %></p>
+        </li>
+        <li class="list-group-item">
+            <strong> Description </strong>
+            <p><%= @webinar.body %></p>
+        </li>
+    </ul>
+    <div class="card-footer">
+        <p>Admin tools</p>
+        <%= link_to "Edit", edit_webinar_path, class: "btn btn-primary" %>
+        <%= link_to "Delete",
+            webinar_path(@webinar),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete the webinar?" },
+            class: "btn btn-danger" %>
+    </div>
+</div>
+<br>
+
+<%= link_to "Back", root_path, class: "btn btn-primary" %>
+<%= link_to "Sign up for €%0.2f" % [@webinar.price], signup_path, class: "btn btn-success" %>
