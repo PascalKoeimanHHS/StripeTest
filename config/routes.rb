@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :webinars
   get "webinars/signup/:id", to: "webinars#signup", as: "signup"
   post "webinars/signup/:id", to: "webinars#signup_confirm", as: "signup_confirm"
+
+  post "checkouts/create", to: "checkouts#create"
 end
