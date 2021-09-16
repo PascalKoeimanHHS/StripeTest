@@ -14,7 +14,7 @@
         </li>
         <li class="list-group-item">
             <strong> Price </strong>
-            <p>$<%= @webinar.price %></p>
+            <p><%= number_to_currency(@webinar.price / 100) %></p>
         </li>
         <li class="list-group-item">
             <strong> Description </strong>
@@ -34,4 +34,4 @@
 <br>
 
 <%= link_to "Back", root_path, class: "btn btn-primary" %>
-<%= button_to "Sign up for $%d" % [@webinar.price], checkouts_create_path, params: {id: @webinar.id}, remote: true, class: "btn btn-success" %>
+<%= button_to "Sign up", checkouts_create_path, params: {id: @webinar.id}, remote: true, class: "btn btn-success" %>

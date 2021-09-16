@@ -1,5 +1,8 @@
 class CheckoutsController < ApplicationController
     def create
+        # Check whether this is a secure/stable way to handle the API key
+        # Stripe.api_key = Rails.application.credentials[:stripe][:secret]
+
         @webinar = Webinar.find(params[:id])
         @session = Stripe::Checkout::Session.create({
             payment_method_types: ['card'],
