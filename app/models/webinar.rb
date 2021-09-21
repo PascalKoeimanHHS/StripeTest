@@ -8,6 +8,6 @@ class Webinar < ApplicationRecord
         # Create Stripe IDs for the product and its pricing
         product = Stripe::Product.create(name: title)
         price = Stripe::Price.create(product: product, unit_amount: self.price, currency: "usd")
-        update(stripe_product_id: product.id)
+        update(stripe_product_id: product.id, stripe_price_id: price.id)
     end
 end

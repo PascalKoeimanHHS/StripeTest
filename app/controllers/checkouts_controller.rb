@@ -10,9 +10,7 @@ class CheckoutsController < ApplicationController
             customer: current_user.stripe_customer_id,
             payment_method_types: ['card'],
             line_items: [{
-                name: @webinar.title,
-                amount: @webinar.price,
-                currency: "usd",
+                price: @webinar.stripe_price_id,
                 quantity: 1
             }],
             mode: 'payment',

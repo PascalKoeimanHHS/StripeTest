@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_111639) do
+ActiveRecord::Schema.define(version: 2021_09_21_122817) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_111639) do
     t.text "body"
     t.integer "price"
     t.string "stripe_product_id"
+    t.string "stripe_price_id"
   end
 
 end
