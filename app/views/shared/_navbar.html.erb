@@ -11,5 +11,25 @@
         </li>
       </ul>
     </div>
+
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--Display logged in user info-->
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to "#{current_user.email} - #{current_user.stripe_customer_id}", edit_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <!--If not logged in, show registrate/sign in buttons-->
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Registrate", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
   </div>
 </nav>

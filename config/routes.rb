@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "webinars#index"
 
   # get "/PATH", to: "CONTROLLER#ACTION"
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   post "webinars/signup/:id", to: "webinars#signup_confirm", as: "signup_confirm"
 
   post "checkouts/create", to: "checkouts#create"
+  resources :webhooks, only: [:create]
 end
