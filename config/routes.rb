@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get "connections/redirect", to: "connections#redirect", as: "connect_redirect"
   root "webinars#index"
 
   # get "/PATH", to: "CONTROLLER#ACTION"
