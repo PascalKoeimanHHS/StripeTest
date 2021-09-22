@@ -1,2 +1,3 @@
-<h1>Succesfully connected to your stripe account</h1>
-Scope = <%= @scope %>
+<h1>Succesfully connected to your stripe account.</h1>
+<p>Authentication code: <%= @auth_code %></p>
+<p>For user: <%= current_user.email %></p>
