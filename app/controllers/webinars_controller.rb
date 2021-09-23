@@ -5,6 +5,8 @@ class WebinarsController < ApplicationController
 
   def show
     @webinar = Webinar.find(params[:id])
+    owner = User.find_by(@webinar.owner)
+    @owner_stripe_id = owner.stripe_account_id
   end
 
   def new
@@ -13,6 +15,7 @@ class WebinarsController < ApplicationController
 
   def create
     @webinar = Webinar.new(webinar_params)
+    @webinar.owner = current_user.id
     @webinar.subscribers = 0
 
     if @webinar.save
